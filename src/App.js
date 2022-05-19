@@ -4,18 +4,23 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-
 import Navbar from './components/Navbar';
-import StocksContainer from './pages/StocksContainer';
+// import MainHeader from './components/MainHeader';
+import SectorsList from './components/SectorsList';
 
 const App = () => (
   <Router basename={process.env.PUBLIC_URL}>
-    <header>
       <Navbar />
-      <hr />
-    </header>
     <Routes>
-      <Route path="/" element={<StocksContainer />} />
+      <Route
+        path="/"
+        element={(
+          <>
+            {/* <MainHeader /> */}
+            <SectorsList />
+          </>
+        )}
+      />
     </Routes>
   </Router>
 );

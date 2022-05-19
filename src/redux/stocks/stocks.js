@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import fetchStocks from '../APIcall';
+import fetchData from '../APIcall';
 
 const GET_STOCKS = 'stock-market-data/stocks/GET_STOCKS';
 
@@ -9,7 +9,7 @@ let isLoading = false;
 
 export const getStocks = () => async (dispatch) => {
   if (isLoading) return;
-  const result = await fetchStocks();
+  const result = await fetchData();
   const stocks = result.map((stock) => ({
     stock_id: uuidv4(),
     symbol: stock.symbol,
