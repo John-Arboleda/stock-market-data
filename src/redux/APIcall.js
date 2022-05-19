@@ -6,4 +6,4 @@ const fetchStocks = async () => {
   return data;
 };
 
-export { fetchStocks };
+export default fetchStocks;
