@@ -7,16 +7,6 @@ const initialState = [];
 
 let isLoading = false;
 
-const marketCapToStr = (data, sector) => {
-  const marketCapNum = data
-    .filter((company) => company.sector === sector)
-    .map((company) => company.marketCap)
-    .reduce((a, b) => a + b);
-  return marketCapNum > 1000000000000
-    ? `$ ${(marketCapNum / 1000000000000).toFixed(2)} T`
-    : `$ ${(marketCapNum / 1000000000).toFixed(2)} B`;
-};
-
 export const getSectors = () => async (dispatch) => {
   if (isLoading) return;
   const result = await fetchData();
@@ -25,7 +15,9 @@ export const getSectors = () => async (dispatch) => {
   const sectors = uniqueSectors.map((sector) => ({
     sector_id: uuidv4(),
     sector_name: sector,
-    sector_mkt_cap: marketCapToStr(result, sector),
+    sector_mkt_cap: result.filter((company) => company.sector === sector)
+      .map((company) => company.marketCap)
+      .reduce((a, b) => a + b),
     sector_num_stocks: result.filter((company) => company.sector === sector).length,
   }));
   dispatch({

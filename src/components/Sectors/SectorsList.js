@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row } from 'react-bootstrap';
 import { getSectors } from '../../redux/sectors/sectors';
 import SectorItem from './SectorItem';
+import MainHeader from '../MainHeader';
 
 const SectorsList = () => {
   const dispatch = useDispatch();
@@ -15,10 +16,13 @@ const SectorsList = () => {
   return (
     <Container>
       <Row>
+        <MainHeader sectors={sectors} />
+      </Row>
+      <Row>
         {sectors.map((sector) => (
           <SectorItem key={sector.sector_id} sector={sector} />
         ))}
-        </Row>
+      </Row>
     </Container>
   );
 };

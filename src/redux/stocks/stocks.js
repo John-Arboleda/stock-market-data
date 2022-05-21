@@ -17,9 +17,7 @@ export const getStocks = (sector) => async (dispatch) => {
       symbol: stock.symbol,
       company_name: stock.companyName,
       stock_price: `$ ${stock.price.toFixed(2)}`,
-      market_cap: stock.marketCap > 1000000000000
-        ? `$ ${(stock.marketCap / 1000000000000).toFixed(2)} T`
-        : `$ ${(stock.marketCap / 1000000000).toFixed(2)} B`,
+      market_cap: stock.marketCap,
     }));
   dispatch({
     type: GET_STOCKS,
