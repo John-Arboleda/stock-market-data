@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { Col } from 'react-bootstrap';
 
 const SectorItem = (props) => {
   const { sector } = props;
   // const badgeClass = sector.isReserved ? 'reserveBadge' : 'reserveBadgeDisabled';
 
   return (
-    <tr>
-      <th><NavLink to={`/${sector.sector_name}`}>{sector.sector_name}</NavLink></th>
-      <th>{sector.sector_mkt_cap}</th>
-      <th>{sector.sector_num_stocks}</th>
-    </tr>
+    <Col xs={6} bg="darkblue">
+      <h4><NavLink to={`/${sector.sector_name}`}>{sector.sector_name}</NavLink></h4>
+      <p>Market Cap: {sector.sector_mkt_cap}</p>
+      <p>{sector.sector_num_stocks === 1 ? `${sector.sector_num_stocks} stock` : `${sector.sector_num_stocks} stocks`}</p>
+    </Col>
   );
 };
 

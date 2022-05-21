@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table } from 'react-bootstrap';
-import { getStocks } from '../redux/stocks/stocks';
+import { getStocks } from '../../redux/stocks/stocks';
 import StockItem from './StockItem';
 
 const StocksList = () => {
@@ -16,15 +16,12 @@ const StocksList = () => {
 
   return (
     <Table>
-      {/* <h1>Stocks</h1> */}
       <thead>
         <tr>
           <th>Symbol</th>
           <th>Company Name</th>
-          <th>Sector</th>
+          <th>Stock Price</th>
           <th>Market Cap</th>
-          {/* <th>Status</th>
-          <th>Action</th> */}
         </tr>
       </thead>
       <tbody>

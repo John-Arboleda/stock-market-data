@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom';
 import Navbar from './components/Navbar';
 // import MainHeader from './components/MainHeader';
-import SectorsList from './components/SectorsList';
-import StocksList from './components/StocksList';
+import SectorsList from './components/Sectors/SectorsList';
+import StocksList from './components/Stocks/StocksList';
 
 const App = () => (
   <Router basename={process.env.PUBLIC_URL}>

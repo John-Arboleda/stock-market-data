@@ -16,7 +16,7 @@ export const getStocks = (sector) => async (dispatch) => {
       stock_id: uuidv4(),
       symbol: stock.symbol,
       company_name: stock.companyName,
-      company_sector: stock.sector,
+      stock_price: `$ ${stock.price.toFixed(2)}`,
       market_cap: stock.marketCap > 1000000000000
         ? `$ ${(stock.marketCap / 1000000000000).toFixed(2)} T`
         : `$ ${(stock.marketCap / 1000000000).toFixed(2)} B`,
