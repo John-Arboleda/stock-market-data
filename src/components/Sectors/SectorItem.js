@@ -6,7 +6,6 @@ import bigIntToStr from '../../helpers/bigIntToStr';
 
 const SectorItem = (props) => {
   const { sector } = props;
-  // const badgeClass = sector.isReserved ? 'reserveBadge' : 'reserveBadgeDisabled';
 
   return (
     <Col xs={6} bg="darkblue">

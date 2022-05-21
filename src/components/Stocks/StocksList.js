@@ -9,16 +9,26 @@ import SectorHeader from '../Sectors/SectorHeader';
 
 const StocksList = () => {
   const { sector } = useParams();
+  const [search, setSearch] = useState([]);
   const dispatch = useDispatch();
   const stocks = useSelector((state) => state.stocks);
   useEffect(() => {
     dispatch(getStocks(sector));
   }, []);
 
+  const SearchHandler = (e) => {
+    setSearch(
+      stocks.filter((c) => c.company_name.toLowerCase().includes(e.target.value.toLowerCase())),
+    );
+  };
+
   return (
     <Container>
       <Row>
         <SectorHeader stocks={stocks} />
+      </Row>
+      <Row>
+        <input type="text" placeholder="Search Company by Name" onChange={SearchHandler} />
       </Row>
       <Row>
         <Table>
@@ -31,7 +41,7 @@ const StocksList = () => {
             </tr>
           </thead>
           <tbody>
-            {stocks.map((stock) => (
+            {search?.map((stock) => (
               <StockItem key={stock.stock_id} stock={stock} />
             ))}
           </tbody>

@@ -21,7 +21,7 @@ StockItem.propTypes = {
     symbol: PropTypes.string,
     company_name: PropTypes.string,
     stock_price: PropTypes.string,
-    market_cap: PropTypes.string,
+    market_cap: PropTypes.number,
   }).isRequired,
 };
 
