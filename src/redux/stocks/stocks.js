@@ -7,15 +7,20 @@ const initialState = [];
 
 let isLoading = false;
 
-export const getStocks = () => async (dispatch) => {
+export const getStocks = (sector) => async (dispatch) => {
   if (isLoading) return;
   const result = await fetchData();
-  const stocks = result.map((stock) => ({
-    stock_id: uuidv4(),
-    symbol: stock.symbol,
-    company_name: stock.companyName,
-    market_cap: stock.marketCap,
-  }));
+  const stocks = result
+    .filter((stock) => stock.sector === sector)
+    .map((stock) => ({
+      stock_id: uuidv4(),
+      symbol: stock.symbol,
+      company_name: stock.companyName,
+      company_sector: stock.sector,
+      market_cap: stock.marketCap > 1000000000000
+        ? `$ ${(stock.marketCap / 1000000000000).toFixed(2)} T`
+        : `$ ${(stock.marketCap / 1000000000).toFixed(2)} B`,
+    }));
   dispatch({
     type: GET_STOCKS,
     payload: stocks,
