@@ -9,6 +9,7 @@ const StockItem = (props) => {
     <tr>
       <th><h3>{stock.symbol}</h3></th>
       <th><p>{stock.company_name}</p></th>
+      <th><p>{stock.company_sector}</p></th>
       <th><p>{stock.market_cap}</p></th>
     </tr>
   );
@@ -19,6 +20,7 @@ StockItem.propTypes = {
     stock_id: PropTypes.string,
     symbol: PropTypes.string,
     company_name: PropTypes.string,
+    company_sector: PropTypes.string,
     market_cap: PropTypes.number,
   }).isRequired,
 };

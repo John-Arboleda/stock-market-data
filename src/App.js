@@ -7,17 +7,25 @@ import {
 import Navbar from './components/Navbar';
 // import MainHeader from './components/MainHeader';
 import SectorsList from './components/SectorsList';
+import StocksList from './components/StocksList';
 
 const App = () => (
   <Router basename={process.env.PUBLIC_URL}>
       <Navbar />
     <Routes>
       <Route
-        path="/"
+        exact path="/"
         element={(
           <>
-            {/* <MainHeader /> */}
             <SectorsList />
+          </>
+        )}
+      />
+      <Route
+        path="/:sector"
+        element={(
+          <>
+            <StocksList />
           </>
         )}
       />

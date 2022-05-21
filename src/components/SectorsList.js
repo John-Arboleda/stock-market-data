@@ -18,8 +18,8 @@ const SectorsList = () => {
       <thead>
         <tr>
           <th>Sector</th>
-          {/* <th>Status</th>
-          <th>Action</th> */}
+          <th>Market Cap</th>
+          <th>Number of Stocks</th>
         </tr>
       </thead>
       <tbody>

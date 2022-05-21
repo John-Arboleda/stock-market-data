@@ -1,15 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table } from 'react-bootstrap';
 import { getStocks } from '../redux/stocks/stocks';
 import StockItem from './StockItem';
 
 const StocksList = () => {
+  const { sector } = useParams();
   const dispatch = useDispatch();
   const stocks = useSelector((state) => state.stocks);
   useEffect(() => {
-    dispatch(getStocks());
+    dispatch(getStocks(sector));
   }, []);
 
   return (
@@ -19,6 +21,7 @@ const StocksList = () => {
         <tr>
           <th>Symbol</th>
           <th>Company Name</th>
+          <th>Sector</th>
           <th>Market Cap</th>
           {/* <th>Status</th>
           <th>Action</th> */}
