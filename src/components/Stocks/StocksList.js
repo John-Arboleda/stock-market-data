@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Table, Row } from 'react-bootstrap';
 import { getStocks } from '../../redux/stocks/stocks';
 import StockItem from './StockItem';
@@ -9,12 +9,12 @@ import SectorHeader from '../Sectors/SectorHeader';
 
 const StocksList = () => {
   const { sector } = useParams();
-  const [search, setSearch] = useState([]);
   const dispatch = useDispatch();
   const stocks = useSelector((state) => state.stocks);
   useEffect(() => {
     dispatch(getStocks(sector));
   }, []);
+  const [search, setSearch] = useState(stocks);
 
   const SearchHandler = (e) => {
     setSearch(

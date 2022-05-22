@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row } from 'react-bootstrap';
 import { getSectors } from '../../redux/sectors/sectors';
 import SectorItem from './SectorItem';
@@ -14,11 +14,11 @@ const SectorsList = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className="p-0">
       <Row>
         <MainHeader sectors={sectors} />
       </Row>
-      <Row>
+      <Row xs={2} md={3} className="g-0">
         {sectors.map((sector) => (
           <SectorItem key={sector.sector_id} sector={sector} />
         ))}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import bigIntToStr from '../helpers/bigIntToStr';
 
 const MainHeader = (props) => {
@@ -15,8 +15,17 @@ const MainHeader = (props) => {
 
   return (
     <Col>
-      <p>{bigIntToStr(TotalMarketCap)}</p>
-      <p>{TotalStocks}</p>
+    <Card bg="primary" text="white">
+    <Card.Body>
+    <div className="p-3 text-center">
+      <Card.Text className="p-3 text-center">
+        Stock Market Watcher allows you to search over {TotalStocks}
+        <span> </span>from different sectors with a combiened market cap of
+        <span> </span>{bigIntToStr(TotalMarketCap)}
+      </Card.Text>
+    </div>
+    </Card.Body>
+    </Card>
     </Col>
   );
 };
