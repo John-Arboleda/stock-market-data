@@ -20,7 +20,7 @@ const MainHeader = (props) => {
     <div className="p-3 text-center">
       <Card.Text className="p-3 text-center">
         Stock Market Watcher allows you to search over {TotalStocks}
-        <span> </span>from different sectors with a combiened market cap of
+        <span> </span>stocks from different sectors with a combined market cap of
         <span> </span>{bigIntToStr(TotalMarketCap)}
       </Card.Text>
     </div>

@@ -13,6 +13,9 @@
 ## Check the live demo
 - [Stock Market Watcher Demo](https://john-arboleda.github.io/stock-market-data/)
 
+## Presentation
+- [Click here](https://www.loom.com/share/667831a827a142f099e657bebc1cb590) to watch a description of the project.
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.

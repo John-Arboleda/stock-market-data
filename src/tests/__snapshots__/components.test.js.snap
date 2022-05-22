@@ -13,9 +13,8 @@ Array [
         onKeyDown={[Function]}
       >
         <a
-          className="nav-link"
-          data-rr-ui-event-key="/"
-          disabled={false}
+          aria-current="page"
+          className="active"
           href="/"
           onClick={[Function]}
         >
@@ -35,7 +34,7 @@ Array [
       </div>
       <a
         className="navbar-brand"
-        href="/"
+        href="/stock-market-data/"
       >
         <h2
           className="m-0"
@@ -121,7 +120,7 @@ Array [
                 <span>
                    
                 </span>
-                from different sectors with a combiened market cap of
+                stocks from different sectors with a combined market cap of
                 <span>
                    
                 </span>
