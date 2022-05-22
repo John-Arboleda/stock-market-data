@@ -14,7 +14,6 @@ const SectorItem = (props) => {
           bg="primary"
           key="primary"
           text='white'
-          style={{ width: '13rem' }}
           className="mb-1"
         >
         <Card.Header>{sector.sector_name}</Card.Header>

@@ -2,7 +2,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Table, Row } from 'react-bootstrap';
+import {
+  Container, Table, Row, Col,
+} from 'react-bootstrap';
 import { getStocks } from '../../redux/stocks/stocks';
 import StockItem from './StockItem';
 import SectorHeader from '../Sectors/SectorHeader';
@@ -22,20 +24,26 @@ const StocksList = () => {
     );
   };
 
+  useEffect(() => {
+    setSearch(stocks);
+  }, [stocks]);
+
   return (
     <Container>
       <Row>
-        <SectorHeader stocks={stocks} />
+        <SectorHeader stocks={stocks} sector={sector}/>
+      </Row>
+      <Row className="py-1 bg-primary">
+        <Col>
+          <input type="text" placeholder="Search by Name" onChange={SearchHandler} />
+        </Col>
       </Row>
       <Row>
-        <input type="text" placeholder="Search Company by Name" onChange={SearchHandler} />
-      </Row>
-      <Row>
-        <Table>
+        <Table striped bordered hover variant="primary">
           <thead>
             <tr>
-              <th>Symbol</th>
-              <th>Company Name</th>
+              <th width={'15%'}>Symbol</th>
+              <th width={'15%'}>Company Name</th>
               <th>Stock Price</th>
               <th>Market Cap</th>
             </tr>
