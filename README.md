@@ -1,14 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# React Template
+# Stock Market Watcher
 
-> This is a template design to start react projects fast. It already contains all the most commonly used development packages. scss and js linters installed as well. 
+> Stock Market Watcher is an App that allows you to consult the market cap and the stock price of different companies on the NASDAQ and NYSE. 
 
 ## Built With
 
 - ReactJS
 - HTML
 - JavaScript
+
+## Check the live demo
+- [Stock Market Watcher Demo](https://john-arboleda.github.io/stock-market-data/)
+
+## Presentation
+- [Click here](https://www.loom.com/share/667831a827a142f099e657bebc1cb590) to watch a description of the project.
 
 ## Getting Started
 
@@ -20,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-- Clone this repository to a directory you want in your computer with this command: ```git@github.com:John-Arboleda/react-template.git```
+- Clone this repository to a directory you want in your computer with this command: ```git@github.com:John-Arboleda/stock-market-data.git```
 
 ### Install
 
@@ -45,6 +51,11 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
+
 
 ## 📝 License
 
