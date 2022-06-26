@@ -2,11 +2,12 @@ import { combineReducers, applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import stockReducer from './stocks/stocks';
+import stocksReducer from './stocks/stocks';
+import sectorsReducer from './sectors/sectors';
 
 const rootReducer = combineReducers({
-  stocks: stockReducer,
-
+  stocks: stocksReducer,
+  sectors: sectorsReducer,
 });
 
 const middleware = applyMiddleware(thunk, logger);
